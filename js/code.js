@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const usuariosValidos = ["admin", "admin@dev.com"];
 
     if (usuariosValidos.includes(email) && password === "1234") {
-      sessionStorage.setItem("auth", "1");
       window.location.href = "dashboard.html";
     } else {
       alert(`Clave incorrecta`);

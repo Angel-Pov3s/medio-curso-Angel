@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Software Dashboard</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            grid-template: "logo header" 60px 
+                           "sidebar breadcrumb" 40px 
+                           "sidebar content" 1fr / 220px 1fr;
+        }
+
+        /* Secciones Principales */
+        .logo {
+            grid-area: logo;
+            background: #e39aee;
+            font-weight: bold;     /* fuente negrita */
+            font-size: 22px;       /* tamaño de fuente */
+            display: flex;         /* lo usare para centrar mi contenido */
+            align-items: center;   
+            padding-left: 20px;    /* un pequeño espacio al lado izquiero */
+        }
+
+        .header {
+            grid-area: header;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #323c4d;
+            color: #fff;          /* color del texto */
+            padding-top: 10px;
+        }
+
+        .breadcrumb {
+            grid-area: breadcrumb;
+            background: #e2e7ec;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #1d06f2;
+        }
+
+        .content {
+            grid-area: content;
+            background: #59d277;
+            padding: 20px;
+        }
+
+        /* Menú Lateral */
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #b8c7ce;  /* color de cada menu */
+            padding: 12px 20px;
+            text-decoration: none; /* elimino el subrado de enlace */
+            font-size: 14px;
+        }
+
+        .sidebar a:hover {
+            /* este evento ocurre cuando se pasa el mouse por encima */
+            background: #d51d0d;
+            color: #fff;
+        }
+
+        /* Avatar */
+        .avatar {
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            font-weight: bold;
+            position: relative;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="logo"> <i class="fa-brands fa-python"></i> Software</div>
+
+    <div class="header">
+        <span> USARIO </span>
+        <div class="avatar">D</div>
+    </div>
+
+    <div class="sidebar">
+        <a href="#"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#"><i class="fa-solid fa-chart-simple"></i> Informes</a>
+        <a href="#"><i class="fa-solid fa-credit-card"></i> Cobros/Pagos</a>
+        <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a>
+        <a href="#"><i class="fa-solid fa-box"></i> Productos</a>
+        <a href="#"><i class="fa-solid fa-circle-user"></i> Clientes</a>
+        <a href="#"><i class="fa-solid fa-user-group"></i> Proveedores</a>
+        <a href="#"><i class="fa-solid fa-user-large"></i> Empleados</a>
+    </div>
+
+    <div class="breadcrumb">
+        Dashboard &nbsp;/&nbsp; <strong> <i class="fa-solid fa-file-invoice-dollar"></i> Facturas emitidas</strong>
+    </div>
+
+    <div class="content">
+        <!-- Contenido principal -->
+    </div>
+
+</body>
+
+</html>

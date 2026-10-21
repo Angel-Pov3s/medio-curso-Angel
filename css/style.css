@@ -1,0 +1,128 @@
+:root {
+    --bg: #050811;
+    --card: #090e1a;
+    --input: #040710;
+    --text: #fff;
+    --muted: #718096;
+    --cyan: #00e5ff;
+    --border: #121c2e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    width: 800px;
+    height: 450px;
+    background: var(--card);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.panel {
+    flex: 1;
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Panel Izquierdo */
+.hero {
+    background: linear-gradient(rgba(9, 14, 26, 0.88), rgba(9, 14, 26, 0.88)),
+        url('../images/fondo.jpg') center/cover;
+    border-right: 1px solid var(--border);
+}
+
+.tag {
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.subtext,
+.hero p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-text {
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+}
+
+/* Formulario */
+.field {
+    margin-bottom: 14px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--input);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 0 12px;
+}
+
+.input-box input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 10px 0;
+    outline: none;
+}
+
+.input-box i {
+    color: var(--muted);
+}
+
+.btn {
+    width: 100%;
+    background: linear-gradient(90deg, #00b4d8, #2563eb);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+}

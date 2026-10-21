@@ -3,11 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const password = document.getElementById('password').value.trim();
 
-    if ((email=="admin") && (password=="1234")) {
-      window.location.href = "http://127.0.0.1:5500/dashboard.html";
+    const usuariosValidos = ["admin", "admin@dev.com"];
+
+    if (usuariosValidos.includes(email) && password === "1234") {
+      sessionStorage.setItem("auth", "1");
+      window.location.href = "dashboard.html";
     } else {
       alert(`Clave incorrecta`);
     }

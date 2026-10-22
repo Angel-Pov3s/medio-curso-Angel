@@ -1,36 +1,63 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const loginForm = document.getElementById('loginForm');
-  const errorModal = document.getElementById('errorModal');
-  const retryBtn = document.getElementById('retryBtn');
-  const passwordInput = document.getElementById('password');
+/**
+ * LOGIN - AURA CLOUD (GRUPO A)
+ * Control de formulario y validación de credenciales
+ */
 
-  const closeModal = () => {
-    errorModal.classList.remove('show');
-    passwordInput.focus();
-    passwordInput.select();
-  };
+// 1. Credenciales correctas designadas
+const USUARIO_CORRECTO = 'angel';
+const CLAVE_CORRECTA = 'angel123';
 
-  retryBtn.addEventListener('click', closeModal);
+// 2. Elementos del DOM
+const loginForm = document.getElementById('loginForm');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const togglePassword = document.getElementById('togglePassword');
+const eyeIcon = document.getElementById('eyeIcon');
+const errorModal = document.getElementById('errorModal');
+const retryBtn = document.getElementById('retryBtn');
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && errorModal.classList.contains('show')) {
-      closeModal();
-    }
-  });
+// 3. Función para ver/ocultar contraseña
+togglePassword.addEventListener('click', () => {
+  const esPassword = passwordInput.type === 'password';
+  passwordInput.type = esPassword ? 'text' : 'password';
+  eyeIcon.className = esPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+});
 
-  loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = document.getElementById('email').value.trim().toLowerCase();
-    const password = passwordInput.value.trim();
+// 4. Funciones del Modal de Error
+function mostrarError() {
+  errorModal.hidden = false;
+  retryBtn.focus();
+}
 
-    const usuariosValidos = ["admin", "admin@dev.com"];
+function cerrarError() {
+  errorModal.hidden = true;
+  passwordInput.value = '';
+  passwordInput.focus();
+}
 
-    if (usuariosValidos.includes(email) && password === "1234") {
-      window.location.href = "dashboard.html";
-    } else {
-      errorModal.classList.add('show');
-      retryBtn.focus();
-    }
-    
-  });
+retryBtn.addEventListener('click', cerrarError);
+
+errorModal.addEventListener('click', (e) => {
+  if (e.target === errorModal) cerrarError();
+});
+
+// 5. Validación del formulario al hacer submit
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const usuario = emailInput.value.trim().toLowerCase();
+  const password = passwordInput.value.trim();
+
+  // Comprobar credenciales
+  const esUsuarioValido = usuario === USUARIO_CORRECTO || usuario === `${USUARIO_CORRECTO}@ejemplo.com` || usuario === 'correo@ejemplo.com';
+  const esClaveValida = password === CLAVE_CORRECTA;
+
+  if (esUsuarioValido && esClaveValida) {
+    // Si la clave es correcta: pasar al Dashboard
+    sessionStorage.setItem('usuario_activo', USUARIO_CORRECTO);
+    window.location.href = 'dashboard.html';
+  } else {
+    // Si la clave es incorrecta: mostrar alerta
+    mostrarError();
+  }
 });

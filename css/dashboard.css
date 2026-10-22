@@ -315,7 +315,8 @@ body {
   align-items: center;
   gap: 5px;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--texto);
 }
 
 .kpi-trend svg {
@@ -323,9 +324,11 @@ body {
   height: 14px;
 }
 
-.trend-up { color: #16a34a; }
-.trend-neutral { color: var(--texto-muted); }
-.trend-alert { color: #d97706; }
+.trend-up,
+.trend-neutral,
+.trend-alert {
+  color: var(--texto);
+}
 
 /* 5. Tabla de Ventas */
 .table-card {

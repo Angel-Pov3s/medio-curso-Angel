@@ -1,9 +1,3 @@
-/* ==========================================================
-   ESTILOS - LOGIN AURA CLOUD (GRUPO A)
-   Carpeta: css/style.css
-   ========================================================== */
-
-/* 1. Variables y Reset */
 :root {
   --bg-body: #0b0f19;
   --bg-card: #ffffff;
@@ -33,7 +27,6 @@ body {
   padding: 20px;
 }
 
-/* 2. Contenedor y Tarjeta Principal */
 .page-container {
   width: 100%;
   max-width: 950px;
@@ -49,7 +42,6 @@ body {
   min-height: 540px;
 }
 
-/* 3. Panel Izquierdo: Hero */
 .panel-hero {
   background: var(--indigo-hero);
   color: #ffffff;
@@ -129,7 +121,6 @@ body {
   text-decoration: underline;
 }
 
-/* 4. Panel Derecho: Formulario */
 .panel-form {
   padding: 44px;
   display: flex;
@@ -239,7 +230,6 @@ body {
   cursor: pointer;
 }
 
-/* Botón principal */
 .btn-submit {
   width: 100%;
   padding: 12px;

@@ -1,13 +1,6 @@
-/**
- * LOGIN - AURA CLOUD (GRUPO A)
- * Control de formulario y validación de credenciales
- */
-
-// 1. Credenciales correctas designadas
 const USUARIO_CORRECTO = 'angel';
 const CLAVE_CORRECTA = 'angel123';
 
-// 2. Elementos del DOM
 const loginForm = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
@@ -16,14 +9,12 @@ const eyeIcon = document.getElementById('eyeIcon');
 const errorModal = document.getElementById('errorModal');
 const retryBtn = document.getElementById('retryBtn');
 
-// 3. Función para ver/ocultar contraseña
 togglePassword.addEventListener('click', () => {
   const esPassword = passwordInput.type === 'password';
   passwordInput.type = esPassword ? 'text' : 'password';
   eyeIcon.className = esPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
 });
 
-// 4. Funciones del Modal de Error
 function mostrarError() {
   errorModal.hidden = false;
   retryBtn.focus();
